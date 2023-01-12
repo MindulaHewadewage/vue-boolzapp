@@ -7,6 +7,8 @@
     <title>Document</title>
     <!-- Bootstrap -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- VueJs -->
@@ -16,50 +18,54 @@
 </head>
 <body>
     <div class="background">
-        <div class="boolzapp-block bg-primary container">
-            <div class="row">
-                <!-- sidebar -->
-                <div class="col-4">
-                    <div class="sidebar">
-                        <!-- nameuser -->
-                        <div class="name-user">
-                            <div class="row">
-                                <div class="col-5">
-                                    <figure>
-                                        <img src="img/avatar_1.jpg" alt="">
-                                    </figure>
-                                </div>
-                                <div class="col-5">
-                                    <figure>
-                                        <img src="img/avatar_1.jpg" alt="">
-                                    </figure>
-                                </div>
-
-                            </div>
-                        </div>
+            <div class="boolzapp-block bg-primary ">
 
 
+                    <div class="container">
+                        <div class="row">
 
-                        <!-- notifications -->
-                        <div class="notifications"></div>
-
-
-                        <!-- searchbar -->
-                        <div class="searchbar"></div>
-
-                        <!-- contacts -->
-                        <div class="contacts"></div>
-                    </div>
-                </div>
-
-
-                <!-- chat -->
-                <div class="col-8">
-                    <div class="main">ss</div>
-                </div>
-            </div>
+                            <!-- sidebar -->
+                            <div class="col-4 sidebar h-100 bg-danger">
+                                <!-- sidebar header -->
+                                    <div class="row sidebar-header align-items-center">
+                                        <div class="col">
+                                            <!-- name-user -->
+                                            <div class="name-user d-flex align-items-center">
+                                                <img src="img/avatar_1.jpg" alt="">
+                                                <h6 class="mb-0">Nome Utente</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <!-- boolzapp-settings -->
+                                            <div class="boolzapp-settings d-flex justify-content-end align-items-center text-secondary">
+                                                <i class="bi bi-clock-history px-1"></i>
+                                                <i class="bi bi-chat-left-fill px-1"></i>
+                                                <i class="bi bi-three-dots-vertical px-1"></i>
+                                            </div>
+                                        </div>
+                                    </div>
             
-        </div>
+            
+            
+                                    <!-- notifications -->
+                                    <div class="notifications"></div>
+            
+            
+                                    <!-- searchbar -->
+                                    <div class="searchbar"></div>
+            
+                                    <!-- contacts -->
+                                    <div class="contacts"></div>
+                            </div>
+
+                            <!-- chat -->
+                            <div class="col-8 bg-success">
+                                <div class="main">ss</div>
+                            </div>
+
+                        </div>
+                    </div>
+            </div>
     </div>
 </body>
 </html>

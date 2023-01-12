@@ -10,7 +10,6 @@ img{
     width: 100%;
 }
 
-
 /* background */
 .background{
     height: 100vh;
@@ -34,16 +33,25 @@ img{
 
 
 /* sidebar */
-.sidebar{
 
 
+.sidebar-header{
+    height: 80px;
+
+    
+}
+.sidebar-header img{
+    border-radius: 50%;
+    width: 60px;
+
+    
 }
 
 
 
 
 /* main */
-main{
+.main{
 
-    background-color: pink;
+
 }
