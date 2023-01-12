@@ -1,4 +1,49 @@
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* utilities */
+img{
+    width: 100%;
+}
+
+
+/* background */
 .background{
     height: 100vh;
     background-image: linear-gradient(#009688 15% , #DADBD3 15% , #DADBD3);
+    position: relative;
+}
+
+
+/* boolzapp  block */
+.boolzapp-block{
+    height: 720px;
+    width: 1200px;
+    margin: 0 auto;
+
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 20px;
+
+}
+
+
+/* sidebar */
+.sidebar{
+
+
+}
+
+
+
+
+/* main */
+main{
+
+    background-color: pink;
 }
