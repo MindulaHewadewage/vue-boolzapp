@@ -71,3 +71,15 @@ img{
     border-radius: 50%;
     width: 60px;
 }
+
+
+.chat{
+    height: calc(100vh - 200px);
+    background-image: url(img/mine.jpg);
+
+}
+
+.input-chat{
+    height: 80px;
+    background-color: #EAEAEA;
+}
