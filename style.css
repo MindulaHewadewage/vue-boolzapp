@@ -35,23 +35,39 @@ img{
 /* sidebar */
 
 
-.sidebar-header{
+.sidebar-header, .selected-contact{
     height: 80px;
-
+    background-color: #EAEAEA;
     
 }
 .sidebar-header img{
     border-radius: 50%;
     width: 60px;
+}
 
+.notifications{
+    height: 80px;
+    background-color: #8EDAFC;
+}
+
+.circle{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    color: #8EDAFC ;
+}
+
+.searchbar{
+    height: 50px;
+    background-color: #EAEAEA;
     
 }
 
 
 
-
 /* main */
-.main{
-
-
+.selected-contact img{
+    border-radius: 50%;
+    width: 60px;
 }

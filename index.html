@@ -25,7 +25,7 @@
                         <div class="row">
 
                             <!-- sidebar -->
-                            <div class="col-4 sidebar h-100 bg-danger">
+                            <div class="col-4 sidebar h-100">
                                 <!-- sidebar header -->
                                     <div class="row sidebar-header align-items-center">
                                         <div class="col">
@@ -37,7 +37,7 @@
                                         </div>
                                         <div class="col">
                                             <!-- boolzapp-settings -->
-                                            <div class="boolzapp-settings d-flex justify-content-end align-items-center text-secondary">
+                                            <div class="boolzapp-settings d-flex justify-content-end align-items-center text-secondary fs-5">
                                                 <i class="bi bi-clock-history px-1"></i>
                                                 <i class="bi bi-chat-left-fill px-1"></i>
                                                 <i class="bi bi-three-dots-vertical px-1"></i>
@@ -48,19 +48,45 @@
             
             
                                     <!-- notifications -->
-                                    <div class="notifications"></div>
-            
+                                    <div class="row notifications align-items-center">
+                                        <div class="col-2">
+                                            <div class="circle d-flex justify-content-center align-items-center">
+                                                <i class="bi bi-bell-slash-fill fs-4"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-10">
+                                            <h6>Ricevi notifiche di nuovi messaggi</h6>
+                                            <p class="text-decoration-underline text-secondary mb-0">This text has a line underneath it.</p>
+                                        </div> 
+                                    </div>
+                                           
             
                                     <!-- searchbar -->
-                                    <div class="searchbar"></div>
+                                    <div class="row searchbar">
+                                        <div class="col d-flex align-items-center">
+                                            <div class="input-group ">
+                                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            </div>
+                                        </div>
+                                    </div>
             
                                     <!-- contacts -->
                                     <div class="contacts"></div>
                             </div>
 
                             <!-- chat -->
-                            <div class="col-8 bg-success">
-                                <div class="main">ss</div>
+                            <div class="col-8 main">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="selected-contact d-flex align-items-center">
+                                            <img src="img/avatar_1.jpg" alt="">
+                                            <h6 class="mb-0">Nome Utente</h6>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="contact-chat"></div>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>
