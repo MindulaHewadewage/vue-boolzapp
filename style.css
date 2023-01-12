@@ -64,6 +64,19 @@ img{
     
 }
 
+.contacts{
+    overflow: auto;
+}
+
+.contacts li{
+    height: 80px;
+}
+
+.contacts img{
+    border-radius: 50%;
+    width: 60px;
+}
+
 
 
 /* main */
@@ -82,4 +95,8 @@ img{
 .input-chat{
     height: 80px;
     background-color: #EAEAEA;
+}
+
+.input-chat .form-control{
+    padding: 1rem ;
 }
