@@ -66,7 +66,7 @@
                                     <!-- searchbar -->
                                     <div class="row searchbar">
                                         <div class="col d-flex align-items-center">
-                                            <div class="input-group ">
+                                            <div class="input-group" v-if="contacts.name.length">
                                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                             </div>
                                         </div>
@@ -104,7 +104,7 @@
                                             <img :src="avatarUrl(currentContact.avatar)" alt="currentContact.name">
                                             <div class="name-last-access d-flex flex-column p-2">
                                                 <h6 class="mb-0">{{currentContact.name}}</h6>
-                                                <p class="mb-0 text-secondary">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
+                                                <p class="mb-0 text-secondary">Ultimo accesso oggi alle {{setCurrentTime()}}</p>
                                             </div>
                                         </div>                           
                                     </div>
@@ -122,8 +122,8 @@
                                         <ul class=" d-flex flex-column ">
                                             <li class="sent message-container  ">
                                                 <div class="message ">
-                                                    <h6>Ricordati di dargli da mangiare</h6>
-                                                    <p class="mb-0">10/01/2020 16:15:22</p>
+                                                    <h6 v-for="(message,i) in contacts">{{currentChat.text}}</h6>
+                                                    <p class="mb-0">{{setCurrentTime()}}</p>
 
                                                 </div>
                                             </li>
@@ -131,7 +131,7 @@
                                             <li class="received message-container ">
                                                 <div class="message ">
                                                     <h6>Ricordati di dargli da mangiare</h6>
-                                                    <p class="mb-0">10/01/2020 16:15:22</p>
+                                                    <p class="mb-0">{{setCurrentTime()}}</p>
                                                 </div>
                                             </li>
                                             
@@ -145,7 +145,7 @@
                                     </div>
                                     <div class="col-10">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <input type="text" v-model="newMessages.sentMessage" @keyup.enter="pushMessage" class="form-control" placeholder="Scrivi un messaggio">
                                         </div>
                                     </div>
                                     <div class="col-1">

@@ -1,7 +1,13 @@
+const dt= luxon.DateTime;
+
 const app = Vue.createApp({
     data(){
         return {
             currentIndex:0,
+            newMessages:{
+              sentMessage:[],
+              receivedMessage:'ok'
+            },
             user:{
                 name:'Mindu Fernando',
                 avatar:'_io'
@@ -94,6 +100,9 @@ const app = Vue.createApp({
     computed:{
       currentContact(){
         return this.contacts[this.currentIndex]
+      },
+      currentChat(){
+        return this.currentContact.messages;
       }
     },
 
@@ -104,6 +113,13 @@ const app = Vue.createApp({
 
       setCurrentIndex(i){
         this.currentIndex=i;
+      },
+
+      pushMessage(){
+        this
+      },
+      setCurrentTime(){
+        return dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
       }
     }
 
