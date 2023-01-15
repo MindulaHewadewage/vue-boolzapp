@@ -31,7 +31,7 @@
                                         <div class="col-8">
                                             <!-- name-user -->
                                             <div class="name-user d-flex align-items-center">
-                                                <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
+                                                <img :src="avatarUrl(user.avatar)" :alt="user.name">
                                                 <h6 class="mb-0">{{user.name}}</h6>
                                             </div>
                                         </div>
@@ -77,7 +77,7 @@
                                                 <!-- contatto -->
                                                 <li v-for="(contact,i) in contacts" @click="setCurrentIndex(i)" class="single-contact d-flex align-items-center"> 
                                                     <div class="contact-profile-image">
-                                                        <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                                                        <img :src="avatarUrl(contact.avatar)" :alt="contact.name">
                                                     </div>
                                                     
                                                     <div class="contact-profile-text px-3">
@@ -99,9 +99,9 @@
                                 <div class="row selected-contact">
                                     <div class="col-9 d-flex align-items-center">
                                         <div class="selected-contact-info d-flex ">
-                                            <img src="img/avatar_1.jpg" alt="">
+                                            <img :src="avatarUrl(contacts[currentIndex].avatar)" alt="">
                                             <div class="name-last-access d-flex flex-column p-2">
-                                                <h6 class="mb-0">Michele</h6>
+                                                <h6 class="mb-0">{{contacts[currentIndex].name}}</h6>
                                                 <p class="mb-0 text-secondary">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
                                             </div>
                                         </div>                           
