@@ -1,11 +1,11 @@
-/* css reset */
+/*! css reset */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* utilities */
+/*! utilities */
 img{
     width: 100%;
 }
@@ -32,7 +32,7 @@ img{
 }
 
 
-/* sidebar */
+/*! sidebar */
 
 .sidebar{
     background-color: #FFFFFF;
@@ -82,19 +82,58 @@ img{
 
 
 
-/* main */
+/*! main */
+/* selected contact */
 .selected-contact img{
     border-radius: 50%;
     width: 60px;
 }
 
-
+/* chat */
 .chat{
     height: calc(100vh - 200px);
     background-image: url(img/mine.jpg);
 
 }
 
+.message-container{
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+
+    display: flex;
+    
+}
+
+.message-container.sent{
+    background-color: #D5F9BA;
+    justify-content: flex-end;
+
+    
+}
+
+.message-container.received{
+    background-color: #FFFFFF;
+    justify-content: start;
+}
+
+
+
+.sent .message p{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.received .message p{
+    justify-content: flex-start;
+}
+
+.message p{
+    font-size: 12px;
+    color: grey;
+}
+
+/* input chat */
 .input-chat{
     height: 80px;
     background-color: #EAEAEA;

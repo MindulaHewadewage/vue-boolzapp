@@ -18,20 +18,20 @@
 </head>
 <body>
     <div class="background">
-            <div class="boolzapp-block">
+            <div class="boolzapp-block" id="root">
 
 
                     <div class="container">
                         <div class="row">
 
                             <!-- sidebar -->
-                            <div class="col-4 sidebar h-100">
+                            <div class="col-4 sidebar">
                                 <!-- sidebar header -->
                                     <div class="row sidebar-header align-items-center">
                                         <div class="col-8">
                                             <!-- name-user -->
                                             <div class="name-user d-flex align-items-center">
-                                                <img src="img/avatar_1.jpg" alt="">
+                                                <img src="`img/avatar${user.avatar}jpg`" alt="">
                                                 <h6 class="mb-0">Nome Utente</h6>
                                             </div>
                                         </div>
@@ -71,7 +71,7 @@
                                     </div>
             
                                     <!-- contacts -->
-                                    <div class="row contacts">
+                                    <div class="row contacts flex-grow-1 overflow-auto">
                                         <div class="col">
                                             <ul class="m-0 p-0">
                                                 <li class="single-contact d-flex align-items-center"> 
@@ -85,10 +85,49 @@
                                                     </div>
                                                 </li>
 
-                                        
+                                                <li class="single-contact d-flex align-items-center"> 
+                                                    <div class="contact-profile-image">
+                                                        <img src="img/avatar_1.jpg" alt="">
+                                                    </div>
+                                                    
+                                                    <div class="contact-profile-text px-3">
+                                                        <h5 class="mb-0">Nome Utente</h5>
+                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
+                                                    </div>
+                                                </li>
 
-                                                
+                                                <li class="single-contact d-flex align-items-center"> 
+                                                    <div class="contact-profile-image">
+                                                        <img src="img/avatar_1.jpg" alt="">
+                                                    </div>
+                                                    
+                                                    <div class="contact-profile-text px-3">
+                                                        <h5 class="mb-0">Nome Utente</h5>
+                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
+                                                    </div>
+                                                </li>
 
+                                                <li class="single-contact d-flex align-items-center"> 
+                                                    <div class="contact-profile-image">
+                                                        <img src="img/avatar_1.jpg" alt="">
+                                                    </div>
+                                                    
+                                                    <div class="contact-profile-text px-3">
+                                                        <h5 class="mb-0">Nome Utente</h5>
+                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
+                                                    </div>
+                                                </li>
+
+                                                <li class="single-contact d-flex align-items-center"> 
+                                                    <div class="contact-profile-image">
+                                                        <img src="img/avatar_1.jpg" alt="">
+                                                    </div>
+                                                    
+                                                    <div class="contact-profile-text px-3">
+                                                        <h5 class="mb-0">Nome Utente</h5>
+                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
+                                                    </div>
+                                                </li>
                                           
                                             </ul>
                                         </div>
@@ -115,7 +154,29 @@
                                     </div>
                                 </div>
 
-                                <div class="row chat"></div>
+
+                                <!-- MESSAGES -->
+                                <div class="row chat">
+                                    <div class="col ">
+                                        <ul class=" d-flex flex-column ">
+                                            <li class="sent message-container  ">
+                                                <div class="message ">
+                                                    <h6>Ricordati di dargli da mangiare</h6>
+                                                    <p class="mb-0">31/01/2022 - 12:14</p>
+
+                                                </div>
+                                            </li>
+
+                                            <li class="received message-container ">
+                                                <div class="message ">
+                                                    <h6>Ricordati di dargli da mangiare</h6>
+                                                    <p class="mb-0">31/01/2022 - 12:14</p>
+                                                </div>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
 
                                 <div class="row input-chat align-items-center">
                                     <div class="col-1">
