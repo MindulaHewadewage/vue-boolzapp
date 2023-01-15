@@ -92,7 +92,9 @@ const app = Vue.createApp({
     },
 
     computed:{
-      
+      currentContact(){
+        return this.contacts[this.currentIndex]
+      }
     },
 
     methods:{

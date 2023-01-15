@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- VueJs -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
     <!-- JS -->
     <script defer src="script.js"></script>
 </head>
@@ -99,9 +101,9 @@
                                 <div class="row selected-contact">
                                     <div class="col-9 d-flex align-items-center">
                                         <div class="selected-contact-info d-flex ">
-                                            <img :src="avatarUrl(contacts[currentIndex].avatar)" alt="">
+                                            <img :src="avatarUrl(currentContact.avatar)" alt="currentContact.name">
                                             <div class="name-last-access d-flex flex-column p-2">
-                                                <h6 class="mb-0">{{contacts[currentIndex].name}}</h6>
+                                                <h6 class="mb-0">{{currentContact.name}}</h6>
                                                 <p class="mb-0 text-secondary">Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
                                             </div>
                                         </div>                           
