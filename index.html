@@ -31,7 +31,7 @@
                                         <div class="col-8">
                                             <!-- name-user -->
                                             <div class="name-user d-flex align-items-center">
-                                                <img :src="`img/avatar${user.avatar}.jpg`" alt="">
+                                                <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
                                                 <h6 class="mb-0">{{user.name}}</h6>
                                             </div>
                                         </div>
@@ -74,61 +74,20 @@
                                     <div class="row contacts flex-grow-1 overflow-auto">
                                         <div class="col">
                                             <ul class="m-0 p-0">
-                                                <li class="single-contact d-flex align-items-center"> 
+                                                <!-- contatto -->
+                                                <li v-for="contact in contacts" class="single-contact d-flex align-items-center"> 
                                                     <div class="contact-profile-image">
-                                                        <img src="img/avatar_1.jpg" alt="">
+                                                        <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                                                     </div>
                                                     
                                                     <div class="contact-profile-text px-3">
-                                                        <h5 class="mb-0">Nome Utente</h5>
-                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
+                                                        <h5 class="mb-0">{{contact.name}}</h5>
+                                                        <p class="text-secondary mb-0">{{contact.message}}</p>
                                                     </div>
                                                 </li>
 
-                                                <li class="single-contact d-flex align-items-center"> 
-                                                    <div class="contact-profile-image">
-                                                        <img src="img/avatar_1.jpg" alt="">
-                                                    </div>
-                                                    
-                                                    <div class="contact-profile-text px-3">
-                                                        <h5 class="mb-0">Nome Utente</h5>
-                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
-                                                    </div>
-                                                </li>
 
-                                                <li class="single-contact d-flex align-items-center"> 
-                                                    <div class="contact-profile-image">
-                                                        <img src="img/avatar_1.jpg" alt="">
-                                                    </div>
-                                                    
-                                                    <div class="contact-profile-text px-3">
-                                                        <h5 class="mb-0">Nome Utente</h5>
-                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
-                                                    </div>
-                                                </li>
 
-                                                <li class="single-contact d-flex align-items-center"> 
-                                                    <div class="contact-profile-image">
-                                                        <img src="img/avatar_1.jpg" alt="">
-                                                    </div>
-                                                    
-                                                    <div class="contact-profile-text px-3">
-                                                        <h5 class="mb-0">Nome Utente</h5>
-                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
-                                                    </div>
-                                                </li>
-
-                                                <li class="single-contact d-flex align-items-center"> 
-                                                    <div class="contact-profile-image">
-                                                        <img src="img/avatar_1.jpg" alt="">
-                                                    </div>
-                                                    
-                                                    <div class="contact-profile-text px-3">
-                                                        <h5 class="mb-0">Nome Utente</h5>
-                                                        <p class="text-secondary mb-0">Attiva notifiche desktop</p>
-                                                    </div>
-                                                </li>
-                                          
                                             </ul>
                                         </div>
                                     </div>
