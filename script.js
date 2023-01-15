@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data(){
         return {
+          
             user:{
                 name:'Mindu Fernando',
                 avatar:'_io'
@@ -95,7 +96,13 @@ const app = Vue.createApp({
     },
 
     methods:{
+      avatarUrl(avatar){
+        return `img/avatar${avatar}.jpg`;
+      },
 
+      setCurrentIndex(i){
+        this.currentIndex=i;
+      }
     }
 
 });

@@ -73,6 +73,11 @@ img{
 
 .contacts li{
     height: 80px;
+    cursor: pointer;
+}
+
+.contacts li:hover{
+    background-color: #EAEAEA;
 }
 
 .contacts img{
