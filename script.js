@@ -8,6 +8,7 @@ const app = Vue.createApp({
               sentMessage:[],
               receivedMessage:'ok'
             },
+            searchedName:'',
             user:{
                 name:'Mindu Fernando',
                 avatar:'_io'
@@ -103,6 +104,9 @@ const app = Vue.createApp({
       },
       currentChat(){
         return this.currentContact.messages;
+      },
+      filteredName(){
+        return this.contacts.name;
       }
     },
 

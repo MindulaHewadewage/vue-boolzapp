@@ -66,8 +66,8 @@
                                     <!-- searchbar -->
                                     <div class="row searchbar">
                                         <div class="col d-flex align-items-center">
-                                            <div class="input-group" v-if="contacts.name.length">
-                                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <div class="input-group" v-if="contacts">
+                                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchedName">
                                             </div>
                                         </div>
                                     </div>
@@ -120,18 +120,11 @@
                                 <div class="row chat">
                                     <div class="col ">
                                         <ul class=" d-flex flex-column ">
-                                            <li class="sent message-container  ">
+                                            <li v-for="message in currentChat" class="sent message-container" :class="message.status">
                                                 <div class="message ">
-                                                    <h6 v-for="(message,i) in contacts">{{currentChat.text}}</h6>
+                                                    <h6>{{message.text}}</h6>
                                                     <p class="mb-0">{{setCurrentTime()}}</p>
 
-                                                </div>
-                                            </li>
-
-                                            <li class="received message-container ">
-                                                <div class="message ">
-                                                    <h6>Ricordati di dargli da mangiare</h6>
-                                                    <p class="mb-0">{{setCurrentTime()}}</p>
                                                 </div>
                                             </li>
                                             
