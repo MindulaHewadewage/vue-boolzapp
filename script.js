@@ -127,16 +127,30 @@ const app = Vue.createApp({
           status: "sent",
         };
         this.currentChat.push(newMessage);
-      }
+        this.newMessage = "";
+      };
 
-      this.newMessage = "";
+      setTimeout(() =>{
+        const answer = {
+          date:this.setCurrentTime(),
+          text:'ok',
+          status:'received'
+        }
+        this.currentChat.push(answer);
+
+      },1000)
     },
+
+
     setCurrentTime() {
       return dt
         .now()
         .setLocale("it")
         .toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS);
-    },
+    }
+
+
+    
   },
 });
 
