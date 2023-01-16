@@ -12,6 +12,7 @@ const app = Vue.createApp({
       },
       contacts: [
         {
+          id:1,
           name: "Michele",
           avatar: "_1",
           visible: true,
@@ -34,6 +35,7 @@ const app = Vue.createApp({
           ],
         },
         {
+          id:2,
           name: "Fabio",
           avatar: "_2",
           visible: true,
@@ -56,6 +58,7 @@ const app = Vue.createApp({
           ],
         },
         {
+          id:3,
           name: "Samuele",
           avatar: "_3",
           visible: true,
@@ -78,6 +81,7 @@ const app = Vue.createApp({
           ],
         },
         {
+          id:4,
           name: "Luisa",
           avatar: "_4",
           visible: true,
