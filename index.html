@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Bootstrap -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css'
+        integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=='
+        crossorigin='anonymous' />
     <!-- Bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- CSS -->
@@ -18,138 +21,145 @@
     <!-- JS -->
     <script defer src="script.js"></script>
 </head>
+
 <body>
     <div class="background">
-            <div class="boolzapp-block" id="root">
+        <div class="boolzapp-block" id="root">
 
 
-                    <div class="container">
-                        <div class="row">
+            <div class="container">
+                <div class="row">
 
-                            <!-- sidebar -->
-                            <div class="col-4 sidebar">
-                                <!-- sidebar header -->
-                                    <div class="row sidebar-header align-items-center">
-                                        <div class="col-8">
-                                            <!-- name-user -->
-                                            <div class="name-user d-flex align-items-center">
-                                                <img :src="avatarUrl(user.avatar)" :alt="user.name">
-                                                <h6 class="mb-0">{{user.name}}</h6>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <!-- boolzapp-settings -->
-                                            <div class="boolzapp-settings d-flex justify-content-end align-items-center text-secondary fs-4">
-                                                <i class="bi bi-clock-history px-1"></i>
-                                                <i class="bi bi-chat-left-fill px-1"></i>
-                                                <i class="bi bi-three-dots-vertical px-1"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-            
-            
-                                    <!-- notifications -->
-                                    <div class="row notifications align-items-center">
-                                        <div class="col-2">
-                                            <div class="circle d-flex justify-content-center align-items-center">
-                                                <i class="bi bi-bell-slash-fill fs-4"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-10">
-                                            <h6>Ricevi notifiche di nuovi messaggi</h6>
-                                            <p class="text-decoration-underline text-secondary mb-0">Attiva notifiche desktop</p>
-                                        </div> 
-                                    </div>
-                                           
-            
-                                    <!-- searchbar -->
-                                    <div class="row searchbar">
-                                        <div class="col d-flex align-items-center">
-                                            <div class="input-group" v-if="contacts">
-                                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="searchedName">
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <!-- contacts -->
-                                    <div class="row contacts flex-grow-1 overflow-auto">
-                                        <div class="col">
-                                            <ul class="m-0 p-0">
-                                                <!-- contatto -->
-                                                <li v-for="(contact,i) in contacts" @click="setCurrentIndex(i)" class="single-contact d-flex align-items-center"> 
-                                                    <div class="contact-profile-image">
-                                                        <img :src="avatarUrl(contact.avatar)" :alt="contact.name">
-                                                    </div>
-                                                    
-                                                    <div class="contact-profile-text px-3">
-                                                        <h5 class="mb-0">{{contact.name}}</h5>
-                                                        <p class="text-secondary mb-0">{{contact.message}}</p>
-                                                    </div>
-                                                </li>
-
-
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                            </div>
-
-                            <!-- chat -->
-                            <div class="col-8 main">
-                                <!-- selected contact -->
-                                <div class="row selected-contact">
-                                    <div class="col-9 d-flex align-items-center">
-                                        <div class="selected-contact-info d-flex ">
-                                            <img :src="avatarUrl(currentContact.avatar)" alt="currentContact.name">
-                                            <div class="name-last-access d-flex flex-column p-2">
-                                                <h6 class="mb-0">{{currentContact.name}}</h6>
-                                                <p class="mb-0 text-secondary">Ultimo accesso oggi alle {{setCurrentTime()}}</p>
-                                            </div>
-                                        </div>                           
-                                    </div>
-                                    <div class="col-3 fs-4 text-secondary d-flex justify-content-end align-items-center">
-                                        <i class="bi bi-search px-1"></i>
-                                        <i class="bi bi-paperclip px-1"></i>
-                                        <i class="bi bi-three-dots-vertical px-1"></i>
-                                    </div>
-                                </div>
-
-
-                                <!-- MESSAGES -->
-                                <div class="row chat">
-                                    <div class="col ">
-                                        <ul class=" d-flex flex-column ">
-                                            <li v-for="message in currentChat" class="sent message-container" :class="message.status">
-                                                <div class="message ">
-                                                    <h6>{{message.text}}</h6>
-                                                    <p class="mb-0">{{setCurrentTime()}}</p>
-
-                                                </div>
-                                            </li>
-                                            
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="row input-chat align-items-center">
-                                    <div class="col-1">
-                                        <i class="bi bi-emoji-smile fs-3 text-secondary justify-content-center"></i>
-                                    </div>
-                                    <div class="col-10">
-                                        <div class="input-group">
-                                            <input type="text" v-model="newMessages.sentMessage" @keyup.enter="pushMessage" class="form-control" placeholder="Scrivi un messaggio">
-                                        </div>
-                                    </div>
-                                    <div class="col-1">
-                                        <i class="bi bi-mic-fill fs-3 text-secondary justify-content-center"></i>
-                                    </div>
+                    <!-- sidebar -->
+                    <div class="col-4 sidebar">
+                        <!-- sidebar header -->
+                        <div class="row sidebar-header align-items-center">
+                            <div class="col-8">
+                                <!-- name-user -->
+                                <div class="name-user d-flex align-items-center">
+                                    <img :src="avatarUrl(user.avatar)" :alt="user.name">
+                                    <h6 class="mb-0">{{user.name}}</h6>
                                 </div>
                             </div>
+                            <div class="col-4">
+                                <!-- boolzapp-settings -->
+                                <div
+                                    class="boolzapp-settings d-flex justify-content-end align-items-center text-secondary fs-4">
+                                    <i class="bi bi-clock-history px-1"></i>
+                                    <i class="bi bi-chat-left-fill px-1"></i>
+                                    <i class="bi bi-three-dots-vertical px-1"></i>
+                                </div>
+                            </div>
+                        </div>
 
+
+
+                        <!-- notifications -->
+                        <div class="row notifications align-items-center">
+                            <div class="col-2">
+                                <div class="circle d-flex justify-content-center align-items-center">
+                                    <i class="bi bi-bell-slash-fill fs-4"></i>
+                                </div>
+                            </div>
+                            <div class="col-10">
+                                <h6>Ricevi notifiche di nuovi messaggi</h6>
+                                <p class="text-decoration-underline text-secondary mb-0">Attiva notifiche desktop</p>
+                            </div>
+                        </div>
+
+
+                        <!-- searchbar -->
+                        <div class="row searchbar">
+                            <div class="col d-flex align-items-center">
+                                <div class="input-group" v-if="contacts">
+                                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                                        v-model="searchedName">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- contacts -->
+                        <div class="row contacts flex-grow-1 overflow-auto">
+                            <div class="col">
+                                <ul class="m-0 p-0">
+                                    <!-- contatto -->
+                                    <li v-for="(contact,i) in contacts" @click="setCurrentIndex(i)"
+                                        class="single-contact d-flex align-items-center">
+                                        <div class="contact-profile-image">
+                                            <img :src="avatarUrl(contact.avatar)" :alt="contact.name">
+                                        </div>
+
+                                        <div class="contact-profile-text px-3">
+                                            <h5 class="mb-0">{{contact.name}}</h5>
+                                            <p class="text-secondary mb-0">{{contact.message}}</p>
+                                        </div>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- chat -->
+                    <div class="col-8 main">
+                        <!-- selected contact -->
+                        <div class="row selected-contact">
+                            <div class="col-9 d-flex align-items-center">
+                                <div class="selected-contact-info d-flex ">
+                                    <img :src="avatarUrl(currentContact.avatar)" alt="currentContact.name">
+                                    <div class="name-last-access d-flex flex-column p-2">
+                                        <h6 class="mb-0">{{currentContact.name}}</h6>
+                                        <p class="mb-0 text-secondary">Ultimo accesso oggi alle {{setCurrentTime()}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 fs-4 text-secondary d-flex justify-content-end align-items-center">
+                                <i class="bi bi-search px-1"></i>
+                                <i class="bi bi-paperclip px-1"></i>
+                                <i class="bi bi-three-dots-vertical px-1"></i>
+                            </div>
+                        </div>
+
+
+                        <!-- MESSAGES -->
+                        <div class="row chat">
+                            <div class="col ">
+                                <ul class=" d-flex flex-column ">
+                                    <li v-for="message in currentChat" class="sent message-container"
+                                        :class="message.status">
+                                        <div class="message ">
+                                            <h6>{{message.text}}</h6>
+                                            <p class="mb-0">{{setCurrentTime()}}</p>
+
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row input-chat align-items-center">
+                            <div class="col-1">
+                                <i class="bi bi-emoji-smile fs-3 text-secondary justify-content-center"></i>
+                            </div>
+                            <div class="col-10">
+                                <div class="input-group">
+                                    <input type="text" v-model="newMessage" @keyup.enter="pushMessage"
+                                        class="form-control" placeholder="Scrivi un messaggio">
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi bi-mic-fill fs-3 text-secondary justify-content-center"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+        </div>
     </div>
 </body>
+
 </html>
